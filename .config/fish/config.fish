@@ -13,7 +13,7 @@ switch (uname)
   case Linux
     #echo "Add autojump..."
   case Darwin
-    source /usr/local/Cellar/autojump/22.2.4/share/autojump/autojump.fish
+    source /usr/local/Cellar/autojump/*/share/autojump/autojump.fish
 end
 
 # Custom plugins and themes may be added to ~/.oh-my-fish/custom
@@ -28,3 +28,12 @@ switch (uname)
   case Darwin
     ssh_agent_start
 end
+
+# Homebrew token
+switch (uname)
+  case Darwin
+    if test -f $HOME/.config/fish/homebrew.fish
+      source $HOME/.config/fish/homebrew.fish
+    end
+end
+
